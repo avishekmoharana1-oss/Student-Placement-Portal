@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Placement Portal</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#" onclick="showSection('home')">
+            <i class="bi bi-mortarboard-fill"></i>
+            Student Placement Portal
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('home')">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('jobs')">
+                        Jobs
+                    </a>
+                </li>
+
+                <li class="nav-item" id="navProfile" style="display:none;">
+                    <a class="nav-link" href="#" onclick="showSection('profile')">
+                        Profile
+                    </a>
+                </li>
+
+                <li class="nav-item" id="navApplications" style="display:none;">
+                    <a class="nav-link" href="#" onclick="showSection('applications')">
+                        Applications
+                    </a>
+                </li>
+
+                <li class="nav-item" id="navDashboard" style="display:none;">
+                    <a class="nav-link" href="#" onclick="showDashboard()">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-2" id="navLogin">
+                    <button
+                        class="btn btn-light btn-sm px-3"
+                        onclick="showSection('login')"
+                    >
+                        Login
+                    </button>
+                </li>
+
+                <li class="nav-item ms-lg-2" id="navRegister">
+                    <button
+                        class="btn btn-outline-light btn-sm px-3"
+                        onclick="showSection('register')"
+                    >
+                        Register
+                    </button>
+                </li>
+
+                <li class="nav-item ms-lg-2" id="navLogout" style="display:none;">
+                    <button
+                        class="btn btn-danger btn-sm px-3"
+                        onclick="logout()"
+                    >
+                        Logout
+                    </button>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- =========================================================
+     ALERT AREA
+========================================================= -->
+<div class="container mt-3">
+    <div id="alertBox"></div>
+</div>
+
+
+<!-- =========================================================
+     HOME
+========================================================= -->
+<section id="home" class="page-section">
+
+    <div class="hero-section">
+        <div class="container">
+
+            <div class="row align-items-center min-vh-75">
+
+                <div class="col-lg-7">
+
+                    <span class="badge bg-light text-primary mb-3 px-3 py-2">
+                        <i class="bi bi-briefcase-fill"></i>
+                        Campus Recruitment Platform
+                    </span>
+
+                    <h1 class="display-4 fw-bold text-white">
+                        Student Placement Portal
+                    </h1>
+
+                    <p class="lead text-white mt-3">
+                        Find opportunities, build your profile, apply for jobs
+                        and track your placement applications in one place.
+                    </p>
+
+                    <div class="mt-4">
+
+                        <button
+                            class="btn btn-light btn-lg me-2 mb-2"
+                            onclick="showSection('jobs')"
+                        >
+                            <i class="bi bi-search"></i>
+                            Explore Jobs
+                        </button>
+
+                        <button
+                            class="btn btn-outline-light btn-lg mb-2"
+                            onclick="showSection('register')"
+                        >
+                            <i class="bi bi-person-plus"></i>
+                            Get Started
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 text-center mt-5 mt-lg-0">
+
+                    <div class="hero-card">
+
+                        <i class="bi bi-mortarboard-fill hero-icon"></i>
+
+                        <h3 class="mt-3">
+                            Build Your Career
+                        </h3>
+
+                        <p>
+                            Connect students and recruiters through a simple
+                            placement management system.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Features -->
+    <div class="container py-5">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Everything You Need
+            </h2>
+
+            <p class="text-muted">
+                A complete platform for students and recruiters.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="bi bi-search feature-icon"></i>
+                    <h4>Find Jobs</h4>
+                    <p>
+                        Search and explore available placement opportunities
+                        based on your skills and interests.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="bi bi-file-earmark-text feature-icon"></i>
+                    <h4>Apply Easily</h4>
+                    <p>
+                        Apply for suitable jobs and keep track of your
+                        application status.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="bi bi-building feature-icon"></i>
+                    <h4>Recruiter Management</h4>
+                    <p>
+                        Recruiters can post jobs and manage student
+                        applications.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     LOGIN
+========================================================= -->
+<section id="login" class="page-section d-none">
+
+    <div class="container py-5">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-6 col-lg-5">
+
+                <div class="card auth-card shadow">
+
+                    <div class="card-body p-4">
+
+                        <div class="text-center mb-4">
+
+                            <div class="auth-icon">
+                                <i class="bi bi-box-arrow-in-right"></i>
+                            </div>
+
+                            <h2 class="fw-bold mt-3">
+                                Login
+                            </h2>
+
+                            <p class="text-muted">
+                                Login to your account
+                            </p>
+
+                        </div>
+
+                        <form id="loginForm">
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="loginEmail"
+                                    class="form-control"
+                                    placeholder="Enter your email"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="loginPassword"
+                                    class="form-control"
+                                    placeholder="Enter your password"
+                                    required
+                                >
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100"
+                            >
+                                <i class="bi bi-box-arrow-in-right"></i>
+                                Login
+                            </button>
+
+                        </form>
+
+                        <p class="text-center mt-4 mb-0">
+
+                            Don't have an account?
+
+                            <a
+                                href="#"
+                                onclick="showSection('register')"
+                            >
+                                Register
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     REGISTER
+========================================================= -->
+<section id="register" class="page-section d-none">
+
+    <div class="container py-5">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-7 col-lg-6">
+
+                <div class="card auth-card shadow">
+
+                    <div class="card-body p-4">
+
+                        <div class="text-center mb-4">
+
+                            <div class="auth-icon">
+                                <i class="bi bi-person-plus-fill"></i>
+                            </div>
+
+                            <h2 class="fw-bold mt-3">
+                                Create Account
+                            </h2>
+
+                            <p class="text-muted">
+                                Register as a student
+                            </p>
+
+                        </div>
+
+                        <form id="registerForm">
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="registerName"
+                                    class="form-control"
+                                    placeholder="Enter your full name"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="registerEmail"
+                                    class="form-control"
+                                    placeholder="Enter your email"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="registerPassword"
+                                    class="form-control"
+                                    placeholder="Create a password"
+                                    required
+                                >
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100"
+                            >
+                                <i class="bi bi-person-plus"></i>
+                                Create Account
+                            </button>
+
+                        </form>
+
+                        <p class="text-center mt-4 mb-0">
+
+                            Already have an account?
+
+                            <a
+                                href="#"
+                                onclick="showSection('login')"
+                            >
+                                Login
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     JOBS
+========================================================= -->
+<section id="jobs" class="page-section d-none">
+
+    <div class="container py-5">
+
+        <div class="text-center mb-4">
+
+            <h2 class="fw-bold">
+                <i class="bi bi-briefcase"></i>
+                Available Jobs
+            </h2>
+
+            <p class="text-muted">
+                Explore available placement opportunities.
+            </p>
+
+        </div>
+
+
+        <!-- Search -->
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-body">
+
+                <div class="row g-2">
+
+                    <div class="col-md-5">
+
+                        <input
+                            type="text"
+                            id="jobKeyword"
+                            class="form-control"
+                            placeholder="Search by keyword..."
+                        >
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <input
+                            type="text"
+                            id="jobLocation"
+                            class="form-control"
+                            placeholder="Location..."
+                        >
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <button
+                            class="btn btn-primary w-100"
+                            onclick="searchJobs()"
+                        >
+                            <i class="bi bi-search"></i>
+                            Search Jobs
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Job list -->
+        <div id="jobsContainer" class="row g-4">
+
+            <div class="col-12 text-center py-5">
+
+                <div class="spinner-border text-primary"></div>
+
+                <p class="mt-2 text-muted">
+                    Loading jobs...
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     JOB DETAILS
+========================================================= -->
+<section id="jobDetails" class="page-section d-none">
+
+    <div class="container py-5">
+
+        <button
+            class="btn btn-outline-secondary mb-4"
+            onclick="showSection('jobs')"
+        >
+            <i class="bi bi-arrow-left"></i>
+            Back to Jobs
+        </button>
+
+        <div id="jobDetailsContainer"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STUDENT PROFILE
+========================================================= -->
+<section id="profile" class="page-section d-none">
+
+    <div class="container py-5">
+
+        <div class="text-center mb-4">
+
+            <h2 class="fw-bold">
+                <i class="bi bi-person-circle"></i>
+                My Profile
+            </h2>
+
+            <p class="text-muted">
+                Manage your student profile.
+            </p>
+
+        </div>
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="card shadow">
+
+                    <div class="card-body p-4">
+
+                        <form id="profileForm">
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label">
+                                        Phone
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="profilePhone"
+                                        class="form-control"
+                                        placeholder="Phone number"
+                                    >
+
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label">
+                                        Education
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="profileEducation"
+                                        class="form-control"
+                                        placeholder="Example: B.Tech CSE"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Skills
+                                </label>
+
+                                <textarea
+                                    id="profileSkills"
+                                    class="form-control"
+                                    rows="3"
+                                    placeholder="Python, FastAPI, SQL..."
+                                ></textarea>
+
+                            </div>
+
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Certifications
+                                </label>
+
+                                <textarea
+                                    id="profileCertifications"
+                                    class="form-control"
+                                    rows="3"
+                                    placeholder="Python Programming..."
+                                ></textarea>
+
+                            </div>
+
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Resume Path
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="profileResume"
+                                    class="form-control"
+                                    placeholder="resume.pdf"
+                                >
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                <i class="bi bi-save"></i>
+                                Save Profile
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STUDENT APPLICATIONS
+========================================================= -->
+<section id="applications" class="page-section d-none">
+
+    <div class="container py-5">
+
+        <div class="text-center mb-4">
+
+            <h2 class="fw-bold">
+                <i class="bi bi-file-earmark-check"></i>
+                My Applications
+            </h2>
+
+            <p class="text-muted">
+                Track the status of your job applications.
+            </p>
+
+        </div>
+
+
+        <div id="applicationsContainer">
+
+            <div class="text-center py-5">
+
+                <div class="spinner-border text-primary"></div>
+
+                <p class="mt-2 text-muted">
+                    Loading applications...
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STUDENT DASHBOARD
+========================================================= -->
+<section id="studentDashboard" class="page-section d-none">
+
+    <div class="container py-5">
+
+        <div class="dashboard-header mb-4">
+
+            <h2 class="fw-bold">
+                Student Dashboard
+            </h2>
+
+            <p class="text-muted" id="studentWelcome">
+                Welcome!
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="dashboard-card">
+
+                    <i class="bi bi-briefcase-fill"></i>
+
+                    <h3 id="studentJobCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Available Jobs
+                    </p>
+
+                    <button
+                        class="btn btn-primary btn-sm"
+                        onclick="showSection('jobs')"
+                    >
+                        View Jobs
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="dashboard-card">
+
+                    <i class="bi bi-file-earmark-check-fill"></i>
+
+                    <h3 id="studentApplicationCount">
+                        0
+                    </h3>
+
+                    <p>
+                        My Applications
+                    </p>
+
+                    <button
+                        class="btn btn-primary btn-sm"
+                        onclick="showSection('applications')"
+                    >
+                        View Applications
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="dashboard-card">
+
+                    <i class="bi bi-person-fill"></i>
+
+                    <h3>
+                        Profile
+                    </h3>
+
+                    <p>
+                        Manage your profile
+                    </p>
+
+                    <button
+                        class="btn btn-primary btn-sm"
+                        onclick="showSection('profile')"
+                    >
+                        Open Profile
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RECRUITER / ADMIN DASHBOARD
+========================================================= -->
+<section id="recruiterDashboard" class="page-section d-none">
+
+    <div class="container py-5">
+
+        <div class="dashboard-header mb-4">
+
+            <h2 class="fw-bold">
+                <i class="bi bi-building"></i>
+                Recruiter / Admin Dashboard
+            </h2>
+
+            <p class="text-muted" id="recruiterWelcome">
+                Manage jobs and applications.
+            </p>
+
+        </div>
+
+
+        <!-- Dashboard cards -->
+        <div class="row g-4 mb-5">
+
+            <div class="col-md-4">
+
+                <div class="dashboard-card">
+
+                    <i class="bi bi-briefcase-fill"></i>
+
+                    <h3 id="recruiterJobCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Active Jobs
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="dashboard-card">
+
+                    <i class="bi bi-people-fill"></i>
+
+                    <h3 id="recruiterApplicationCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Applications
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="dashboard-card">
+
+                    <i class="bi bi-person-badge-fill"></i>
+
+                    <h3 id="recruiterRole">
+                        -
+                    </h3>
+
+                    <p>
+                        Current Role
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Create Job -->
+        <div class="card shadow mb-5">
+
+            <div class="card-header bg-primary text-white">
+
+                <h5 class="mb-0">
+                    <i class="bi bi-plus-circle"></i>
+                    Post New Job
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <form id="createJobForm">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Job Title
+                            </label>
+
+                            <input
+                                type="text"
+                                id="jobTitle"
+                                class="form-control"
+                                placeholder="Python Backend Developer"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Company Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="companyName"
+                                class="form-control"
+                                placeholder="Company name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="jobLocationCreate"
+                                class="form-control"
+                                placeholder="Bhubaneswar"
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Salary
+                            </label>
+
+                            <input
+                                type="text"
+                                id="jobSalary"
+                                class="form-control"
+                                placeholder="6 LPA"
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Skills Required
+                            </label>
+
+                            <input
+                                type="text"
+                                id="jobSkills"
+                                class="form-control"
+                                placeholder="Python, FastAPI, SQL"
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Application Deadline
+                            </label>
+
+                            <input
+                                type="date"
+                                id="jobDeadline"
+                                class="form-control"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-12 mb-3">
+
+                            <label class="form-label">
+                                Job Description
+                            </label>
+
+                            <textarea
+                                id="jobDescription"
+                                class="form-control"
+                                rows="4"
+                                placeholder="Describe the job..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        <i class="bi bi-plus-circle"></i>
+                        Post Job
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- Recruiter Jobs -->
+        <div class="card shadow mb-5">
+
+            <div class="card-header">
+
+                <h5 class="mb-0">
+                    <i class="bi bi-list-ul"></i>
+                    Job Management
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <div id="recruiterJobsContainer">
+
+                    <div class="text-center py-4">
+                        <div class="spinner-border text-primary"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Applications -->
+        <div class="card shadow">
+
+            <div class="card-header">
+
+                <h5 class="mb-0">
+                    <i class="bi bi-people"></i>
+                    Student Applications
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <div id="recruiterApplicationsContainer">
+
+                    <div class="text-center py-4">
+                        <div class="spinner-border text-primary"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="bg-dark text-white mt-5">
+
+    <div class="container py-4">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <h5>
+                    <i class="bi bi-mortarboard-fill"></i>
+                    Student Placement Portal
+                </h5>
+
+                <p class="text-secondary mb-0">
+                    Connecting students with career opportunities.
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+
+                <p class="text-secondary mb-1">
+                    Full Stack Python Project
+                </p>
+
+                <p class="text-secondary mb-0">
+                    HTML • CSS • Bootstrap • JavaScript • FastAPI • SQL Server
+                </p>
+
+            </div>
+
+        </div>
+
+        <hr class="border-secondary">
+
+        <p class="text-center text-secondary mb-0">
+            © 2026 Student Placement Portal
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     BOOTSTRAP JAVASCRIPT
+========================================================= -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

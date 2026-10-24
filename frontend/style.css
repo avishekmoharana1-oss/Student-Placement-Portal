@@ -1,0 +1,497 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #212529;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-section {
+    min-height: 70vh;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar-brand {
+    font-size: 1.15rem;
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.navbar .nav-link:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+    background: linear-gradient(
+        135deg,
+        #0d6efd 0%,
+        #084298 100%
+    );
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.hero-section h1 {
+    line-height: 1.15;
+}
+
+.hero-section .lead {
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 45px 30px;
+    color: white;
+    backdrop-filter: blur(8px);
+}
+
+.hero-icon {
+    font-size: 5rem;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 35px 25px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+    margin-bottom: 20px;
+}
+
+.feature-card h4 {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   AUTH CARDS
+========================================================= */
+
+.auth-card {
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.auth-icon {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 50%;
+    background: #e7f1ff;
+    color: #0d6efd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.auth-card .form-control {
+    min-height: 48px;
+}
+
+.auth-card .form-control:focus,
+.card .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.12);
+}
+
+
+/* =========================================================
+   JOB CARDS
+========================================================= */
+
+.job-card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    height: 100%;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.job-card-header {
+    background: linear-gradient(
+        135deg,
+        #0d6efd,
+        #084298
+    );
+    color: white;
+    padding: 20px;
+}
+
+.job-card-body {
+    padding: 22px;
+}
+
+.job-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.company-name {
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+.job-info {
+    color: #6c757d;
+    margin-bottom: 8px;
+}
+
+.job-info i {
+    width: 20px;
+    color: #0d6efd;
+}
+
+.skill-badge {
+    display: inline-block;
+    background: #e7f1ff;
+    color: #0d6efd;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 3px;
+}
+
+
+/* =========================================================
+   JOB DETAILS
+========================================================= */
+
+.job-details-card {
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.job-details-header {
+    background: linear-gradient(
+        135deg,
+        #0d6efd,
+        #084298
+    );
+    color: white;
+    padding: 35px;
+}
+
+.job-details-body {
+    padding: 30px;
+}
+
+.job-details-label {
+    font-weight: 700;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+.job-details-value {
+    color: #6c757d;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard-header {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+}
+
+.dashboard-card i {
+    font-size: 2.8rem;
+    color: #0d6efd;
+    margin-bottom: 12px;
+}
+
+.dashboard-card h3 {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.dashboard-card p {
+    color: #6c757d;
+}
+
+
+/* =========================================================
+   APPLICATION STATUS
+========================================================= */
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-applied {
+    background: #cff4fc;
+    color: #055160;
+}
+
+.status-shortlisted {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+.status-rejected {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.status-selected {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+
+/* =========================================================
+   APPLICATION CARD
+========================================================= */
+
+.application-card {
+    background: white;
+    border: none;
+    border-radius: 15px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+.application-card h5 {
+    font-weight: 700;
+}
+
+.application-card .company {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+.table-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+.table th {
+    white-space: nowrap;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.custom-alert {
+    border-radius: 10px;
+    border: none;
+    padding: 13px 18px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-container {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    box-shadow: 0 3px 8px rgba(13, 110, 253, 0.18);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    margin-top: 0 !important;
+}
+
+footer h5 {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .navbar .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .min-vh-75 {
+        min-height: auto;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .hero-section h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-card {
+        padding: 30px 20px;
+    }
+
+    .hero-icon {
+        font-size: 4rem;
+    }
+
+    .job-details-header {
+        padding: 25px;
+    }
+
+    .job-details-body {
+        padding: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .feature-card {
+        padding: 25px 18px;
+    }
+
+    .auth-card .card-body {
+        padding: 25px !important;
+    }
+
+}
